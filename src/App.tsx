@@ -144,23 +144,37 @@ const About = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="text-4xl md:text-5xl font-serif mb-8">Our Foundation</h2>
+            <h2 className="text-4xl md:text-5xl font-serif mb-8">About GFTJI</h2>
             
-            <div className="mb-10">
-              <h3 className="text-xs font-bold uppercase tracking-widest text-brand-olive mb-3">Mission Statement</h3>
-              <p className="text-xl text-brand-ink/70 leading-relaxed italic border-l-4 border-brand-olive pl-6">
-                Grace for the Journey exists to provide holistic support to parents raising children with special needs by offering spiritual encouragement, practical resources, advocacy, financial empowerment opportunities, and community connection—so that families can thrive with dignity, hope, and stability.
+            <div className="space-y-6 text-lg text-brand-ink/70 leading-relaxed">
+              <p>
+                Grace for the Journey International is a non-profit organization that seeks to provide programming and services to families with special needs children through words of encouragement through the Word of God, prayer, and Philanthropic Work.
+              </p>
+              
+              <p className="font-medium text-brand-olive">
+                We host live Bible Readings and Studies, prayer, and intercession on TikTok, Facebook, and YouTube to serve our community.
+              </p>
+
+              <div className="bg-brand-olive/5 p-8 rounded-3xl border-l-4 border-brand-olive my-8">
+                <h3 className="text-xs font-bold uppercase tracking-widest text-brand-olive mb-4">Our mandate is based on 2 Corinthians 12:9</h3>
+                <p className="text-xl font-serif italic mb-4">
+                  Troubles may come, miracles happen, and yet those should not be the reason we stop serving and ministering to God.
+                </p>
+                <p>
+                  As God said to Apostle Paul My Grace is Sufficient, so is that same grace sufficient for us today.
+                </p>
+              </div>
+
+              <p>
+                For Moses knew the character of God, while the nation of Israel knew his works.
+              </p>
+              
+              <p>
+                We like Moses, seek to know God more than the miracles. Supporting others as we walk towards building a safe space for those in need.
               </p>
             </div>
 
-            <div className="mb-10">
-              <h3 className="text-xs font-bold uppercase tracking-widest text-brand-olive mb-3">Vision Statement</h3>
-              <p className="text-lg text-brand-ink/60 leading-relaxed">
-                To build a faith-centered community where parents of children with special needs are spiritually strengthened, emotionally supported, financially empowered, and never walk their journey alone.
-              </p>
-            </div>
-
-            <div className="grid grid-cols-2 gap-6">
+            <div className="grid grid-cols-2 gap-6 mt-10">
               <div className="flex items-start gap-3">
                 <div className="mt-1 text-brand-olive"><ShieldCheck size={20} /></div>
                 <div>
