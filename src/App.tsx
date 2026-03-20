@@ -26,7 +26,7 @@ import {
 
 const Logo = () => (
   <div className="relative w-12 h-12 flex items-center justify-center">
-    <div className="absolute inset-0 bg-gradient-to-tr from-brand-olive to-yellow-500 rounded-full shadow-lg border-2 border-white/20" />
+    <div className="absolute inset-0 bg-gradient-to-tr from-brand-forest to-brand-gold rounded-full shadow-lg border-2 border-white/20" />
     <div className="relative z-10 text-white flex flex-col items-center">
       <BookOpen size={20} />
       <span className="text-[6px] font-bold uppercase tracking-tighter leading-none mt-0.5">2 Cor 12:9</span>
@@ -42,7 +42,7 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto flex justify-between items-center glass-card rounded-full px-8 py-3">
         <div className="flex items-center gap-3">
           <Logo />
-          <span className="font-serif text-xl font-bold tracking-tight text-brand-olive">Graceftji.com</span>
+          <span className="font-serif text-xl font-bold tracking-tight text-brand-forest">Graceftji.com</span>
         </div>
 
         {/* Desktop Nav */}
@@ -51,12 +51,12 @@ const Navbar = () => {
             <a 
               key={item} 
               href={`#${item.toLowerCase().replace(' ', '-')}`} 
-              className="text-sm font-medium hover:text-brand-olive transition-colors"
+              className="text-sm font-medium hover:text-brand-forest transition-colors"
             >
               {item}
             </a>
           ))}
-          <a href="#donate" className="pill-button bg-brand-olive text-white hover:bg-brand-olive/90 text-sm px-6">
+          <a href="#donate" className="pill-button bg-brand-forest text-white hover:bg-brand-forest/90 text-sm px-6">
             Donate Now
           </a>
         </div>
@@ -100,8 +100,8 @@ const Hero = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center px-6 pt-20 overflow-hidden">
       {/* Background Elements */}
-      <div className="absolute top-1/4 -left-20 w-96 h-96 bg-brand-olive/5 rounded-full blur-3xl" />
-      <div className="absolute bottom-1/4 -right-20 w-96 h-96 bg-brand-olive/10 rounded-full blur-3xl" />
+      <div className="absolute top-1/4 -left-20 w-96 h-96 bg-brand-forest/5 rounded-full blur-3xl" />
+      <div className="absolute bottom-1/4 -right-20 w-96 h-96 bg-brand-forest/10 rounded-full blur-3xl" />
 
       <div className="max-w-5xl mx-auto text-center relative z-10">
         <motion.div
@@ -109,21 +109,21 @@ const Hero = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <span className="inline-block px-4 py-1.5 rounded-full bg-brand-olive/10 text-brand-olive text-xs font-semibold uppercase tracking-widest mb-6">
+          <span className="inline-block px-4 py-1.5 rounded-full bg-brand-forest/10 text-brand-forest text-xs font-semibold uppercase tracking-widest mb-6 border border-brand-forest/20">
             Dallas, Texas • Special Needs Support
           </span>
-          <h1 className="text-6xl md:text-8xl font-serif leading-[1.1] mb-8">
+          <h1 className="text-6xl md:text-8xl font-serif leading-[1.1] mb-8 text-brand-forest">
             Strength in <span className="italic">Weakness</span> <br />
-            Hope in the <span className="text-brand-olive">Journey</span>.
+            Hope in the <span className="italic">Journey</span>.
           </h1>
           <p className="text-lg md:text-xl text-brand-ink/70 max-w-3xl mx-auto mb-10 leading-relaxed">
             "My grace is sufficient for you, for my power is made perfect in weakness." — 2 Corinthians 12:9
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <button className="pill-button bg-brand-olive text-white px-10 py-4 text-lg hover:scale-105 active:scale-95">
+            <button className="pill-button bg-brand-forest text-white px-10 py-4 text-lg hover:scale-105 active:scale-95 shadow-lg shadow-brand-forest/20">
               Get Support
             </button>
-            <button className="pill-button border border-brand-olive text-brand-olive px-10 py-4 text-lg hover:bg-brand-olive/5">
+            <button className="pill-button border-2 border-brand-gold text-brand-forest px-10 py-4 text-lg hover:bg-brand-gold/10 font-bold">
               Our Mission
             </button>
           </div>
@@ -151,13 +151,13 @@ const About = () => {
                 Grace for the Journey International is a non-profit organization that seeks to provide programming and services to families with special needs children through words of encouragement through the Word of God, prayer, and Philanthropic Work.
               </p>
               
-              <p className="font-medium text-brand-olive">
+              <p className="font-medium text-brand-forest">
                 We host live Bible Readings and Studies, prayer, and intercession on TikTok, Facebook, and YouTube to serve our community.
               </p>
 
-              <div className="bg-brand-olive/5 p-8 rounded-3xl border-l-4 border-brand-olive my-8">
-                <h3 className="text-xs font-bold uppercase tracking-widest text-brand-olive mb-4">Our mandate is based on 2 Corinthians 12:9</h3>
-                <p className="text-xl font-serif italic mb-4">
+              <div className="bg-brand-forest/5 p-8 rounded-3xl border-l-4 border-brand-gold my-8">
+                <h3 className="text-xs font-bold uppercase tracking-widest text-brand-forest mb-4">Our mandate is based on 2 Corinthians 12:9</h3>
+                <p className="text-xl font-serif italic mb-4 text-brand-forest">
                   Troubles may come, miracles happen, and yet those should not be the reason we stop serving and ministering to God.
                 </p>
                 <p>
@@ -176,14 +176,14 @@ const About = () => {
 
             <div className="grid grid-cols-2 gap-6 mt-10">
               <div className="flex items-start gap-3">
-                <div className="mt-1 text-brand-olive"><ShieldCheck size={20} /></div>
+                <div className="mt-1 text-brand-gold"><ShieldCheck size={20} /></div>
                 <div>
                   <h4 className="font-bold">Holistic Support</h4>
                   <p className="text-sm text-brand-ink/50">Spiritual, emotional, and physical care.</p>
                 </div>
               </div>
               <div className="flex items-start gap-3">
-                <div className="mt-1 text-brand-olive"><Users size={20} /></div>
+                <div className="mt-1 text-brand-gold"><Users size={20} /></div>
                 <div>
                   <h4 className="font-bold">Community</h4>
                   <p className="text-sm text-brand-ink/50">A place where you never walk alone.</p>
@@ -192,7 +192,7 @@ const About = () => {
             </div>
           </motion.div>
           <div className="relative">
-            <div className="aspect-square rounded-[3rem] overflow-hidden shadow-xl">
+            <div className="aspect-square rounded-[3rem] overflow-hidden shadow-xl border-8 border-brand-forest/5">
               <img 
                 src="https://picsum.photos/seed/dallas/1000/1000" 
                 alt="Support Group in Dallas" 
@@ -200,7 +200,7 @@ const About = () => {
                 referrerPolicy="no-referrer"
               />
             </div>
-            <div className="absolute -top-6 -right-6 w-32 h-32 bg-brand-olive/10 rounded-full blur-2xl" />
+            <div className="absolute -top-6 -right-6 w-32 h-32 bg-brand-gold/10 rounded-full blur-2xl" />
           </div>
         </div>
       </div>
@@ -219,7 +219,7 @@ const Programs = () => {
               We provide comprehensive support systems designed to foster resilience, growth, and lasting change for families of children with special needs.
             </p>
           </div>
-          <a href="#" className="flex items-center gap-2 text-brand-olive font-medium group">
+          <a href="#" className="flex items-center gap-2 text-brand-forest font-medium group">
             View All Programs <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
           </a>
         </div>
@@ -269,7 +269,7 @@ const RecipientStories = () => {
   ];
 
   return (
-    <section id="impact" className="py-24 px-6 bg-brand-olive/5">
+    <section id="impact" className="py-24 px-6 bg-brand-forest/5">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-serif mb-6">Recipient Stories</h2>
@@ -286,7 +286,7 @@ const RecipientStories = () => {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
-              className="glass-card overflow-hidden rounded-[2.5rem] group"
+              className="glass-card overflow-hidden rounded-[2.5rem] group border-t-4 border-brand-gold"
             >
               <div className="aspect-square overflow-hidden">
                 <img 
@@ -297,9 +297,9 @@ const RecipientStories = () => {
                 />
               </div>
               <div className="p-8">
-                <Quote className="text-brand-olive/20 mb-4" size={32} />
+                <Quote className="text-brand-gold/20 mb-4" size={32} />
                 <p className="text-brand-ink/70 italic mb-6 leading-relaxed">"{item.story}"</p>
-                <p className="font-bold text-brand-olive">— {item.name}</p>
+                <p className="font-bold text-brand-forest">— {item.name}</p>
               </div>
             </motion.div>
           ))}
@@ -355,12 +355,12 @@ const Events = () => {
               className="bg-brand-warm p-8 rounded-[2rem] shadow-sm border border-brand-ink/5 flex flex-col"
             >
               <div className="flex justify-between items-start mb-6">
-                <span className="px-3 py-1 bg-brand-olive/10 text-brand-olive text-xs font-bold rounded-full uppercase tracking-wider">
+                <span className="px-3 py-1 bg-brand-forest/10 text-brand-forest text-xs font-bold rounded-full uppercase tracking-wider">
                   {event.type}
                 </span>
-                <Calendar className="text-brand-olive/40" size={20} />
+                <Calendar className="text-brand-gold" size={20} />
               </div>
-              <p className="text-brand-olive font-bold text-sm mb-2">{event.date}</p>
+              <p className="text-brand-forest font-bold text-sm mb-2">{event.date}</p>
               <h3 className="text-2xl font-serif mb-4">{event.title}</h3>
               <p className="text-sm text-brand-ink/40 mb-4 flex items-center gap-1">
                 <Globe size={14} /> {event.location}
@@ -368,7 +368,7 @@ const Events = () => {
               <p className="text-brand-ink/60 text-sm leading-relaxed mb-8 flex-grow">
                 {event.description}
               </p>
-              <button className="text-brand-olive font-bold text-sm flex items-center gap-2 hover:gap-3 transition-all">
+              <button className="text-brand-forest font-bold text-sm flex items-center gap-2 hover:gap-3 transition-all">
                 Register Now <ArrowRight size={16} />
               </button>
             </motion.div>
@@ -381,12 +381,12 @@ const Events = () => {
 
 const Donate = () => {
   return (
-    <section id="donate" className="py-24 px-6 bg-brand-ink text-white">
+    <section id="donate" className="py-24 px-6 bg-brand-forest text-white">
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div>
             <h2 className="text-5xl md:text-7xl font-serif mb-8 leading-tight">
-              Your Legacy of <span className="text-brand-olive italic">Grace</span>.
+              Your Legacy of <span className="text-brand-gold italic">Grace</span>.
             </h2>
             <p className="text-xl text-white/70 mb-10 leading-relaxed">
               For those who have been blessed with much, GFTJI offers a meaningful way to ensure your resources continue to empower families in Dallas and beyond.
@@ -394,14 +394,14 @@ const Donate = () => {
             
             <div className="space-y-6 mb-12">
               <div className="flex items-center gap-4 p-6 bg-white/5 rounded-2xl border border-white/10">
-                <Award className="text-brand-olive" size={32} />
+                <Award className="text-brand-gold" size={32} />
                 <div>
                   <h4 className="text-xl font-bold">Tax-Deductible Giving</h4>
                   <p className="text-white/50">Maximize your impact while optimizing your estate planning.</p>
                 </div>
               </div>
               <div className="flex items-center gap-4 p-6 bg-white/5 rounded-2xl border border-white/10">
-                <HandHeart className="text-brand-olive" size={32} />
+                <HandHeart className="text-brand-gold" size={32} />
                 <div>
                   <h4 className="text-xl font-bold">Endowment Opportunities</h4>
                   <p className="text-white/50">Create a permanent fund that supports a specific cause in your name.</p>
@@ -411,24 +411,24 @@ const Donate = () => {
           </div>
 
           <div className="bg-white text-brand-ink p-10 md:p-16 rounded-[3rem] shadow-2xl">
-            <h3 className="text-3xl font-serif mb-8 text-center">Make a Significant Gift</h3>
+            <h3 className="text-3xl font-serif mb-8 text-center text-brand-forest">Make a Significant Gift</h3>
             
             <div className="grid grid-cols-2 gap-4 mb-8">
               {['$500', '$1,000', '$5,000', 'Other'].map((amount) => (
-                <button key={amount} className="py-4 border-2 border-brand-olive/20 rounded-2xl font-bold text-xl hover:bg-brand-olive hover:text-white hover:border-brand-olive transition-all">
+                <button key={amount} className="py-4 border-2 border-brand-forest/20 rounded-2xl font-bold text-xl hover:bg-brand-forest hover:text-white hover:border-brand-forest transition-all">
                   {amount}
                 </button>
               ))}
             </div>
 
-            <button className="w-full py-6 bg-brand-olive text-white rounded-2xl font-bold text-2xl shadow-lg hover:scale-[1.02] transition-transform mb-8">
+            <button className="w-full py-6 bg-brand-forest text-white rounded-2xl font-bold text-2xl shadow-lg hover:scale-[1.02] transition-transform mb-8">
               Donate Securely Online
             </button>
 
             <div className="pt-8 border-t border-brand-ink/10 text-center">
               <p className="font-bold text-lg mb-2">Prefer to Give by Check?</p>
               <p className="text-brand-ink/60 mb-4">Please make checks payable to:</p>
-              <div className="bg-brand-olive/5 p-4 rounded-xl font-mono text-sm">
+              <div className="bg-brand-forest/5 p-4 rounded-xl font-mono text-sm border border-brand-forest/10">
                 Grace for the Journey International<br />
                 Attn: Development Office<br />
                 123 Grace Way, Suite 500<br />
@@ -448,12 +448,12 @@ const FeatureCard = ({ icon: Icon, title, description, delay }: any) => (
     whileInView={{ opacity: 1, y: 0 }}
     viewport={{ once: true }}
     transition={{ delay, duration: 0.6 }}
-    className="glass-card p-8 rounded-[2rem] hover:shadow-lg transition-all group"
+    className="glass-card p-8 rounded-[2rem] hover:shadow-lg transition-all group border-b-4 border-brand-orange"
   >
-    <div className="w-14 h-14 bg-brand-olive/10 rounded-2xl flex items-center justify-center text-brand-olive mb-6 group-hover:scale-110 transition-transform">
+    <div className="w-14 h-14 bg-brand-forest/10 rounded-2xl flex items-center justify-center text-brand-forest mb-6 group-hover:scale-110 transition-transform">
       <Icon size={28} />
     </div>
-    <h3 className="text-2xl font-serif mb-4">{title}</h3>
+    <h3 className="text-2xl font-serif mb-4 text-brand-forest">{title}</h3>
     <p className="text-brand-ink/60 leading-relaxed">
       {description}
     </p>
@@ -477,10 +477,10 @@ const Contact = () => {
     <section id="contact" className="py-24 px-6">
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12">
         <div className="glass-card rounded-[3rem] p-12 md:p-16">
-          <h2 className="text-4xl font-serif mb-8">Get in Touch</h2>
+          <h2 className="text-4xl font-serif mb-8 text-brand-forest">Get in Touch</h2>
           <div className="space-y-6">
             <div className="flex items-center gap-4">
-              <div className="w-12 h-12 bg-brand-olive/10 rounded-full flex items-center justify-center text-brand-olive">
+              <div className="w-12 h-12 bg-brand-forest/10 rounded-full flex items-center justify-center text-brand-forest">
                 <Phone size={20} />
               </div>
               <div>
@@ -489,7 +489,7 @@ const Contact = () => {
               </div>
             </div>
             <div className="flex items-center gap-4">
-              <div className="w-12 h-12 bg-brand-olive/10 rounded-full flex items-center justify-center text-brand-olive">
+              <div className="w-12 h-12 bg-brand-forest/10 rounded-full flex items-center justify-center text-brand-forest">
                 <MapPin size={20} />
               </div>
               <div>
@@ -498,7 +498,7 @@ const Contact = () => {
               </div>
             </div>
             <div className="flex items-center gap-4">
-              <div className="w-12 h-12 bg-brand-olive/10 rounded-full flex items-center justify-center text-brand-olive">
+              <div className="w-12 h-12 bg-brand-forest/10 rounded-full flex items-center justify-center text-brand-forest">
                 <Mail size={20} />
               </div>
               <div>
@@ -509,11 +509,11 @@ const Contact = () => {
           </div>
         </div>
 
-        <div className="glass-card rounded-[3rem] p-12 md:p-16 text-center relative overflow-hidden">
-          <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-brand-olive to-transparent opacity-30" />
+        <div className="glass-card rounded-[3rem] p-12 md:p-16 text-center relative overflow-hidden border-b-8 border-brand-gold">
+          <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-brand-forest to-transparent opacity-30" />
           
-          <Mail className="mx-auto text-brand-olive mb-8" size={48} />
-          <h2 className="text-4xl font-serif mb-6">Stay Connected</h2>
+          <Mail className="mx-auto text-brand-forest mb-8" size={48} />
+          <h2 className="text-4xl font-serif mb-6 text-brand-forest">Stay Connected</h2>
           <p className="text-lg text-brand-ink/60 mb-10">
             Join our global community. Sign up for updates and stories of impact.
           </p>
@@ -525,12 +525,12 @@ const Contact = () => {
                 placeholder="Your email address" 
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="flex-1 px-6 py-4 rounded-full bg-white/50 border border-brand-ink/10 focus:outline-none focus:border-brand-olive transition-colors"
+                className="flex-1 px-6 py-4 rounded-full bg-white/50 border border-brand-ink/10 focus:outline-none focus:border-brand-forest transition-colors"
                 required
               />
               <button 
                 type="submit"
-                className="pill-button bg-brand-olive text-white px-8 py-4 flex items-center justify-center gap-2 group"
+                className="pill-button bg-brand-forest text-white px-8 py-4 flex items-center justify-center gap-2 group"
               >
                 Sign Up <ChevronRight size={18} className="group-hover:translate-x-1 transition-transform" />
               </button>
@@ -542,7 +542,7 @@ const Contact = () => {
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0 }}
-                  className="text-brand-olive mt-4 font-medium"
+                  className="text-brand-forest mt-4 font-medium"
                 >
                   Thank you for joining our journey!
                 </motion.p>
@@ -557,33 +557,33 @@ const Contact = () => {
 
 const Footer = () => {
   return (
-    <footer className="py-16 px-6 border-t border-brand-ink/5">
+    <footer className="py-16 px-6 border-t border-brand-ink/5 bg-brand-forest text-white">
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
           <div className="md:col-span-2">
             <div className="flex items-center gap-3 mb-6">
               <Logo />
-              <span className="font-serif text-2xl font-bold text-brand-olive">Graceftji.com</span>
+              <span className="font-serif text-2xl font-bold text-brand-gold">Graceftji.com</span>
             </div>
-            <p className="text-brand-ink/50 max-w-sm leading-relaxed">
+            <p className="text-white/50 max-w-sm leading-relaxed">
               Providing holistic support to parents raising children with special needs through spiritual encouragement, practical resources, and community connection.
             </p>
           </div>
 
           <div>
-            <h4 className="font-semibold mb-6 uppercase text-xs tracking-widest text-brand-ink/40">Quick Links</h4>
+            <h4 className="font-semibold mb-6 uppercase text-xs tracking-widest text-white/40">Quick Links</h4>
             <ul className="space-y-4 text-sm">
               {['About Us', 'Our Programs', 'Upcoming Events', 'Ways to Give', 'Contact'].map(link => (
-                <li key={link}><a href={`#${link.toLowerCase().replace(' ', '-')}`} className="hover:text-brand-olive transition-colors">{link}</a></li>
+                <li key={link}><a href={`#${link.toLowerCase().replace(' ', '-')}`} className="hover:text-brand-gold transition-colors">{link}</a></li>
               ))}
             </ul>
           </div>
 
           <div>
-            <h4 className="font-semibold mb-6 uppercase text-xs tracking-widest text-brand-ink/40">Follow Us</h4>
+            <h4 className="font-semibold mb-6 uppercase text-xs tracking-widest text-white/40">Follow Us</h4>
             <div className="flex gap-4">
               {[Instagram, Facebook, Twitter].map((Icon, i) => (
-                <a key={i} href="#" className="w-10 h-10 rounded-full border border-brand-ink/10 flex items-center justify-center hover:bg-brand-olive hover:text-white hover:border-brand-olive transition-all">
+                <a key={i} href="#" className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center hover:bg-brand-gold hover:text-brand-forest hover:border-brand-gold transition-all">
                   <Icon size={18} />
                 </a>
               ))}
@@ -591,14 +591,14 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="flex flex-col md:flex-row justify-between items-center pt-8 border-t border-brand-ink/5 gap-4">
-          <p className="text-xs text-brand-ink/40">
+        <div className="flex flex-col md:flex-row justify-between items-center pt-8 border-t border-white/5 gap-4">
+          <p className="text-xs text-white/40">
             Copyright © 2025 Grace for the Journey International - All Rights Reserved.
           </p>
-          <div className="flex gap-8 text-xs text-brand-ink/40">
-            <a href="#" className="hover:text-brand-ink transition-colors">Privacy Policy</a>
-            <a href="#" className="hover:text-brand-ink transition-colors">Terms of Service</a>
-            <a href="#" className="hover:text-brand-ink transition-colors">Cookie Policy</a>
+          <div className="flex gap-8 text-xs text-white/40">
+            <a href="#" className="hover:text-brand-gold transition-colors">Privacy Policy</a>
+            <a href="#" className="hover:text-brand-gold transition-colors">Terms of Service</a>
+            <a href="#" className="hover:text-brand-gold transition-colors">Cookie Policy</a>
           </div>
         </div>
       </div>
