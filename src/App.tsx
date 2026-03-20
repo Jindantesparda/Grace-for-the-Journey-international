@@ -254,17 +254,17 @@ const RecipientStories = () => {
     {
       name: "The Thompson Family",
       story: "After years of feeling isolated, GFTJI provided the community connection we desperately needed. Their financial empowerment program helped us secure a stable future for our son.",
-      image: "https://picsum.photos/seed/family1/600/600"
+      image: "https://picsum.photos/seed/man-smile/600/600"
     },
     {
       name: "Maria & Leo",
       story: "The spiritual encouragement I received here gave me the strength to advocate for Leo's education. We are no longer walking this journey alone.",
-      image: "https://picsum.photos/seed/family2/600/600"
+      image: "https://picsum.photos/seed/woman-glasses/600/600"
     },
     {
       name: "The Chen Family",
       story: "Practical resources from GFTJI made a world of difference in navigating Leo's medical needs. They are truly a blessing to Dallas families.",
-      image: "https://picsum.photos/seed/family3/600/600"
+      src="https://picsum.photos/seed/dallas/1000/1000".
     }
   ];
 
