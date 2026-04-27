@@ -24,13 +24,13 @@ import {
   Quote
 } from 'lucide-react';
 
-const Logo = () => (
-  <div className="relative w-12 h-12 flex items-center justify-center">
-    <div className="absolute inset-0 bg-gradient-to-tr from-brand-forest to-brand-gold rounded-full shadow-lg border-2 border-white/20" />
-    <div className="relative z-10 text-white flex flex-col items-center">
-      <BookOpen size={20} />
-      <span className="text-[6px] font-bold uppercase tracking-tighter leading-none mt-0.5">2 Cor 12:9</span>
-    </div>
+const Logo = ({ size = "w-24 h-24" }) => (
+  <div className={`relative ${size} flex items-center justify-center overflow-hidden rounded-full`}>
+    <img 
+      src="/src/public/images/logo.png" 
+      alt="GFTJI Logo" 
+      className="w-full h-full object-contain"
+    />
   </div>
 );
 
@@ -194,7 +194,7 @@ const About = () => {
           <div className="relative">
             <div className="aspect-square rounded-[3rem] overflow-hidden shadow-xl border-8 border-brand-forest/5">
               <img 
-                src="https://picsum.photos/seed/dallas/1000/1000" 
+                src="/src/public/images/1.jpeg" 
                 alt="Support Group in Dallas" 
                 className="w-full h-full object-cover"
                 referrerPolicy="no-referrer"
@@ -254,17 +254,17 @@ const RecipientStories = () => {
     {
       name: "The Thompson Family",
       story: "After years of feeling isolated, GFTJI provided the community connection we desperately needed. Their financial empowerment program helped us secure a stable future for our son.",
-      image: "https://picsum.photos/seed/man-smile/600/600"
+      image: "/src/public/images/2.jpeg"
     },
     {
       name: "Maria & Leo",
       story: "The spiritual encouragement I received here gave me the strength to advocate for Leo's education. We are no longer walking this journey alone.",
-      image: "https://picsum.photos/seed/woman-glasses/600/600"
+      image: "/src/public/images/4.jpeg"
     },
     {
       name: "The Chen Family",
       story: "Practical resources from GFTJI made a world of difference in navigating Leo's medical needs. They are truly a blessing to Dallas families.",
-      src="https://picsum.photos/seed/dallas/1000/1000".
+      image: "/src/public/images/5.jpeg"
     }
   ];
 
@@ -312,11 +312,12 @@ const RecipientStories = () => {
 const Events = () => {
   const events = [
     {
-      date: "March 15-17, 2026",
-      title: "Global Empowerment Conference",
-      location: "Dallas Convention Center",
-      description: "Our flagship annual event bringing together leaders, volunteers, and supporters from over 20 countries to share strategies for community resilience.",
-      type: "Conference"
+      date: "May 2, 2026 - 10:00 AM",
+      title: "The Altar Call Prayer",
+      location: "Virtual Prayer Gathering",
+      description: "A powerful morning of intercession and spiritual breakthrough. Join our global community online—scan the QR code on the event flyer to join the meeting.",
+      type: "Virtual Event",
+      image: "/src/public/images/event.jpeg" // Path to your new image
     },
     {
       date: "April 22, 2026",
@@ -340,7 +341,7 @@ const Events = () => {
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-serif mb-6">Upcoming Events</h2>
           <p className="text-lg text-brand-ink/60 max-w-2xl mx-auto">
-            Join us in person in Dallas or online to learn, grow, and contribute to our global mission.
+            Join us in person in Dallas or online to learn, grow, and contribute to our mission.
           </p>
         </div>
 
@@ -352,25 +353,39 @@ const Events = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
-              className="bg-brand-warm p-8 rounded-[2rem] shadow-sm border border-brand-ink/5 flex flex-col"
+              className="bg-brand-warm overflow-hidden rounded-[2rem] shadow-sm border border-brand-ink/5 flex flex-col"
             >
-              <div className="flex justify-between items-start mb-6">
-                <span className="px-3 py-1 bg-brand-forest/10 text-brand-forest text-xs font-bold rounded-full uppercase tracking-wider">
-                  {event.type}
-                </span>
-                <Calendar className="text-brand-gold" size={20} />
+              {/* Added Image Display for the main event */}
+             {event.image && (
+  <div className="aspect-[4/5] w-full overflow-hidden bg-brand-forest/5 p-4"> 
+    {/* aspect-[4/5] matches the vertical shape of your flyer better */}
+    <img 
+      src={event.image} 
+      alt={event.title} 
+      className="w-full h-full object-contain rounded-xl shadow-md"
+    />
+  </div>
+)}
+              
+              <div className="p-8 flex flex-col flex-grow">
+                <div className="flex justify-between items-start mb-6">
+                  <span className="px-3 py-1 bg-brand-forest/10 text-brand-forest text-xs font-bold rounded-full uppercase tracking-wider">
+                    {event.type}
+                  </span>
+                  <Calendar className="text-brand-gold" size={20} />
+                </div>
+                <p className="text-brand-forest font-bold text-sm mb-2">{event.date}</p>
+                <h3 className="text-2xl font-serif mb-4">{event.title}</h3>
+                <p className="text-sm text-brand-ink/40 mb-4 flex items-center gap-1">
+                  <Globe size={14} /> {event.location}
+                </p>
+                <p className="text-brand-ink/60 text-sm leading-relaxed mb-8 flex-grow">
+                  {event.description}
+                </p>
+                <button className="text-brand-forest font-bold text-sm flex items-center gap-2 hover:gap-3 transition-all">
+                  Join Gathering <ArrowRight size={16} />
+                </button>
               </div>
-              <p className="text-brand-forest font-bold text-sm mb-2">{event.date}</p>
-              <h3 className="text-2xl font-serif mb-4">{event.title}</h3>
-              <p className="text-sm text-brand-ink/40 mb-4 flex items-center gap-1">
-                <Globe size={14} /> {event.location}
-              </p>
-              <p className="text-brand-ink/60 text-sm leading-relaxed mb-8 flex-grow">
-                {event.description}
-              </p>
-              <button className="text-brand-forest font-bold text-sm flex items-center gap-2 hover:gap-3 transition-all">
-                Register Now <ArrowRight size={16} />
-              </button>
             </motion.div>
           ))}
         </div>
