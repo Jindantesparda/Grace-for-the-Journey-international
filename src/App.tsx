@@ -27,7 +27,7 @@ import {
 const Logo = ({ size = "w-24 h-24" }) => (
   <div className={`relative ${size} flex items-center justify-center overflow-hidden rounded-full`}>
     <img 
-      src="/src/public/images/logo.png" 
+      src="/images/logo.png" 
       alt="GFTJI Logo" 
       className="w-full h-full object-contain"
     />
