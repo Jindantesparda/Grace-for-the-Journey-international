@@ -194,7 +194,7 @@ const About = () => {
           <div className="relative">
             <div className="aspect-square rounded-[3rem] overflow-hidden shadow-xl border-8 border-brand-forest/5">
               <img 
-                src="/src/public/images/1.jpeg" 
+                src="/images/1.jpeg" 
                 alt="Support Group in Dallas" 
                 className="w-full h-full object-cover"
                 referrerPolicy="no-referrer"
@@ -254,17 +254,17 @@ const RecipientStories = () => {
     {
       name: "The Thompson Family",
       story: "After years of feeling isolated, GFTJI provided the community connection we desperately needed. Their financial empowerment program helped us secure a stable future for our son.",
-      image: "/src/public/images/2.jpeg"
+      image: "/images/2.jpeg"
     },
     {
       name: "Maria & Leo",
       story: "The spiritual encouragement I received here gave me the strength to advocate for Leo's education. We are no longer walking this journey alone.",
-      image: "/src/public/images/4.jpeg"
+      image: "/images/4.jpeg"
     },
     {
       name: "The Chen Family",
       story: "Practical resources from GFTJI made a world of difference in navigating Leo's medical needs. They are truly a blessing to Dallas families.",
-      image: "/src/public/images/5.jpeg"
+      image: "/images/5.jpeg"
     }
   ];
 
@@ -317,7 +317,7 @@ const Events = () => {
       location: "Virtual Prayer Gathering",
       description: "A powerful morning of intercession and spiritual breakthrough. Join our global community online—scan the QR code on the event flyer to join the meeting.",
       type: "Virtual Event",
-      image: "/src/public/images/event.jpeg" // Path to your new image
+      image: "/images/event.jpeg" // Path to your new image
     },
     {
       date: "April 22, 2026",
