@@ -25,7 +25,7 @@ export default function Footer() {
           <div className="lg:col-span-1">
             <div className="flex items-baseline gap-4 mb-10">
               <img 
-                src="/src/public/images/logo.png" 
+                src="/images/logo.png" 
                 alt="GFTJI Logo" 
                 className="h-16 w-auto"
               />
