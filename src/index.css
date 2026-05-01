@@ -1,32 +1,30 @@
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Inter:wght@100..900&display=swap');
 @import "tailwindcss";
 
 @theme {
-  --font-serif: "Cormorant Garamond", serif;
-  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --color-gold: #C5A059;
+  --color-gold-dark: #8E6E36;
+  --color-dark-green: #022c22;
+  --color-cream: #f9f7f2;
   
-  --color-brand-warm: #FDFBF7;
-  --color-brand-forest: #23392E;
-  --color-brand-gold: #F4C44C;
-  --color-brand-orange: #D97706;
-  --color-brand-ink: #1a1a1a;
+  --font-serif: "Playfair Display", serif;
+  --font-sans: "Montserrat", sans-serif;
 }
 
 @layer base {
   body {
-    @apply font-sans bg-brand-warm text-brand-ink antialiased;
+    @apply bg-cream text-dark-green font-sans antialiased;
   }
   
   h1, h2, h3, h4, h5, h6 {
-    @apply font-serif text-brand-forest;
+    @apply font-serif font-bold tracking-tight;
   }
 }
 
-.glass-card {
-  @apply bg-white/40 backdrop-blur-md border border-white/20 shadow-sm;
+.gold-gradient {
+  background: linear-gradient(135deg, var(--color-gold) 0%, var(--color-gold-dark) 100%);
 }
 
-.pill-button {
-  @apply px-6 py-2.5 rounded-full transition-all duration-300 font-medium;
+.vertical-text {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
 }
-
