@@ -63,7 +63,7 @@ export default function Hero() {
           <div className="relative aspect-[4/5] bg-neutral-100 shadow-3xl overflow-hidden group">
             <div className="absolute inset-0 bg-dark-green mix-blend-multiply opacity-20 z-10 transition-opacity group-hover:opacity-10" />
             <img 
-              src="/src/public/images/7.jpeg"
+              src="/images/7.jpeg"
               alt="Social Hero" 
               className="w-full h-full object-cover grayscale brightness-110 contrast-125"
               referrerPolicy="no-referrer"

@@ -21,7 +21,7 @@ export default function Navbar() {
           className="flex items-baseline gap-4"
         >
           <img 
-            src="/src/public/images/logo.png" 
+            src="/images/logo.png" 
             alt="GFTJI Logo" 
             className="h-20 w-auto"
           />
