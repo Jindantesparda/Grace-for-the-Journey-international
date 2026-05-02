@@ -32,7 +32,7 @@ emailjs.init('YOUR_PUBLIC_KEY');
 const Logo = ({ size = "w-24 h-24" }) => (
   <div className={`relative ${size} flex items-center justify-center overflow-hidden rounded-full`}>
     <img 
-      src="images/logo.png" 
+      src="/images/logo.png" 
       alt="GFTJI Logo" 
       className="w-full h-full object-contain"
     />
@@ -44,7 +44,7 @@ const Navbar = () => {
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 px-6 py-4">
-      <div className="max-w-7xl mx-auto flex justify-between items-center glass-card rounded-full px-8 py-3">
+      <div className="max-w-7xl mx-auto flex justify-between items-center glass-card rounded-full px-8 py-3 backdrop-blur-xl bg-white/10 border border-white/20 shadow-lg">
         <div className="flex items-center gap-3">
           <Logo />
           <span className="font-serif text-xl font-bold tracking-tight text-brand-forest">Graceftji.com</span>
@@ -79,7 +79,7 @@ const Navbar = () => {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
-            className="md:hidden absolute top-20 left-6 right-6 glass-card rounded-3xl p-8 flex flex-col gap-6"
+            className="md:hidden absolute top-20 left-6 right-6 glass-card rounded-3xl p-8 flex flex-col gap-6 backdrop-blur-xl bg-white/10 border border-white/20 shadow-lg"
           >
             {['About', 'Programs', 'Events', 'Impact', 'Contact'].map((item) => (
               <a 
@@ -117,7 +117,7 @@ const Hero = () => {
           <span className="inline-block px-4 py-1.5 rounded-full bg-brand-forest/10 text-brand-forest text-xs font-semibold uppercase tracking-widest mb-6 border border-brand-forest/20">
             Dallas, Texas • Special Needs Support
           </span>
-          <h1 className="text-6xl md:text-8xl font-serif leading-[1.1] mb-8 text-brand-forest">
+          <h1 className="text-5xl md:text-8xl font-serif leading-[1.1] mb-8 text-brand-forest">
             Strength in <span className="italic">Weakness</span> <br />
             Hope in the <span className="italic">Journey</span>.
           </h1>
@@ -199,7 +199,7 @@ const About = () => {
           <div className="relative">
             <div className="aspect-square rounded-[3rem] overflow-hidden shadow-xl border-8 border-brand-forest/5">
               <img 
-                src="/src/public/images/patient.jpeg" 
+                src="/images/patient.jpeg" 
                 alt="Support Group in Dallas" 
                 className="w-full h-full object-cover"
                 referrerPolicy="no-referrer"
@@ -259,17 +259,17 @@ const RecipientStories = () => {
     {
       name: "The Thompson Family",
       story: "After years of feeling isolated, GFTJI provided the community connection we desperately needed. Their financial empowerment program helped us secure a stable future for our son.",
-      image: "/src/public/images/2.jpeg"
+      image: "/images/2.jpeg"
     },
     {
       name: "Maria & Leo",
       story: "The spiritual encouragement I received here gave me the strength to advocate for Leo's education. We are no longer walking this journey alone.",
-      image: "/src/public/images/4.jpeg"
+      image: "/images/4.jpeg"
     },
     {
       name: "The Chen Family",
       story: "Practical resources from GFTJI made a world of difference in navigating Leo's medical needs. They are truly a blessing to Dallas families.",
-      image: "/src/public/images/5.jpeg"
+      image: "/images/5.jpeg"
     }
   ];
 
@@ -322,7 +322,7 @@ const Events = () => {
       location: "Virtual Prayer Gathering",
       description: "A powerful morning of intercession and spiritual breakthrough. Join our global community online—scan the QR code on the event flyer to join the meeting.",
       type: "Virtual Event",
-      image: "/src/public/images/event.jpeg" // Path to your new image
+      image: "/images/event.jpeg"
     },
     {
       date: "April 22, 2026",
@@ -400,12 +400,14 @@ const Events = () => {
 };
 
 const Donate = () => {
+  const [customAmount, setCustomAmount] = useState('');
+
   return (
     <section id="donate" className="py-24 px-6 bg-brand-forest text-white">
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div>
-            <h2 className="text-5xl md:text-7xl font-serif mb-8 leading-tight">
+            <h2 className="text-4xl md:text-7xl font-serif mb-8 leading-tight">
               Your Legacy of <span className="text-brand-gold italic">Grace</span>.
             </h2>
             <p className="text-xl text-white/70 mb-10 leading-relaxed">
@@ -433,29 +435,52 @@ const Donate = () => {
           <div className="bg-white text-brand-ink p-10 md:p-16 rounded-[3rem] shadow-2xl">
             <h3 className="text-3xl font-serif mb-8 text-center text-brand-forest">Make a Significant Gift</h3>
             
-            <div className="grid grid-cols-2 gap-4 mb-8">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
               {[
                 { label: '$500', amount: '500' },
                 { label: '$1,000', amount: '1000' },
-                { label: '$5,000', amount: '5000' },
-                { label: 'Other', amount: '' }
+                { label: '$5,000', amount: '5000' }
               ].map((donation) => (
-                <button 
+                <motion.button 
                   key={donation.label} 
-                  onClick={() => window.open(`https://www.paypal.com/paypalme/TNyama${donation.amount ? '/' + donation.amount : ''}`, '_blank')}
+                  onClick={() => window.open(`https://www.paypal.com/paypalme/TNyama/${donation.amount}`, '_blank')}
+                  whileTap={{ scale: 0.95 }}
                   className="py-4 border-2 border-brand-forest/20 rounded-2xl font-bold text-xl hover:bg-brand-forest hover:text-white hover:border-brand-forest transition-all"
                 >
                   {donation.label}
-                </button>
+                </motion.button>
               ))}
             </div>
 
-            <button 
+            <div className="flex gap-4 mb-8">
+              <input 
+                type="number" 
+                placeholder="Enter custom amount" 
+                value={customAmount}
+                onChange={(e) => setCustomAmount(e.target.value)}
+                className="flex-1 py-4 px-4 border-2 border-brand-forest/20 rounded-2xl font-bold text-xl focus:outline-none focus:border-brand-forest"
+                min="1"
+              />
+              <motion.button 
+                onClick={() => {
+                  if (customAmount && parseFloat(customAmount) > 0) {
+                    window.open(`https://www.paypal.com/paypalme/TNyama/${customAmount}`, '_blank');
+                  }
+                }}
+                whileTap={{ scale: 0.95 }}
+                className="py-4 px-6 border-2 border-brand-forest/20 rounded-2xl font-bold text-xl hover:bg-brand-forest hover:text-white hover:border-brand-forest transition-all"
+              >
+                Donate
+              </motion.button>
+            </div>
+
+            <motion.button 
               onClick={() => window.open('https://www.paypal.com/paypalme/TNyama', '_blank')}
+              whileTap={{ scale: 0.98 }}
               className="w-full py-6 bg-brand-forest text-white rounded-2xl font-bold text-2xl shadow-lg hover:scale-[1.02] transition-transform mb-8"
             >
               Donate Securely Online
-            </button>
+            </motion.button>
 
             <div className="pt-8 border-t border-brand-ink/10 text-center">
               <p className="font-bold text-lg mb-2">Prefer to Give by Check?</p>
