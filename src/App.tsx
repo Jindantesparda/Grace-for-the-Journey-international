@@ -194,7 +194,7 @@ const About = () => {
           <div className="relative">
             <div className="aspect-square rounded-[3rem] overflow-hidden shadow-xl border-8 border-brand-forest/5">
               <img 
-                src="/src/public/images/1.jpeg" 
+                src="/src/public/images/patient.jpeg" 
                 alt="Support Group in Dallas" 
                 className="w-full h-full object-cover"
                 referrerPolicy="no-referrer"
@@ -411,15 +411,15 @@ const Donate = () => {
               <div className="flex items-center gap-4 p-6 bg-white/5 rounded-2xl border border-white/10">
                 <Award className="text-brand-gold" size={32} />
                 <div>
-                  <h4 className="text-xl font-bold">Tax-Deductible Giving</h4>
-                  <p className="text-white/50">Maximize your impact while optimizing your estate planning.</p>
+                  <h4 className="text-xl font-bold text-brand-gold">Tax-Deductible Giving</h4>
+                  <p className="text-brand-gold">Maximize your impact while optimizing your estate planning.</p>
                 </div>
               </div>
               <div className="flex items-center gap-4 p-6 bg-white/5 rounded-2xl border border-white/10">
                 <HandHeart className="text-brand-gold" size={32} />
                 <div>
-                  <h4 className="text-xl font-bold">Endowment Opportunities</h4>
-                  <p className="text-white/50">Create a permanent fund that supports a specific cause in your name.</p>
+                  <h4 className="text-xl font-bold text-brand-gold">Endowment Opportunities</h4>
+                  <p className="text-brand-gold">Create a permanent fund that supports a specific cause in your name.</p>
                 </div>
               </div>
             </div>
