@@ -290,12 +290,12 @@ const RecipientStories = () => {
     {
       name: "Maria & Leo",
       story: "The spiritual encouragement I received here gave me the strength to advocate for Leo's education. We are no longer walking this journey alone.",
-      image: "/images/4.jpeg"
+      image: "/images/initadvocacy.png"
     },
     {
       name: "The Chen Family",
       story: "Practical resources from GFTJI made a world of difference in navigating Leo's medical needs. They are truly a blessing to Dallas families.",
-      image: "/images/5.jpeg"
+      image: "/images/11.jpeg"
     }
   ];
 
