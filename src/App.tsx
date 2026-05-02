@@ -128,7 +128,7 @@ const Hero = () => {
               <img
                 src="/images/logo.png"
                 alt="GFTJI Logo"
-                className="h-20 w-20 rounded-full border-2 border-brand-gold bg-white p-1"
+                className="h-25 w-25 rounded-full border-2 border-brand-gold bg-white p-1 object-contain"
               />
               <p className="text-white text-lg md:text-xl font-semibold uppercase tracking-[0.18em] text-center">
                 Grace For The Journey International
@@ -351,18 +351,18 @@ const Events = () => {
       image: "/images/event.jpeg"
     },
     {
-      date: "April 22, 2026",
-      title: "Spring Charity Gala",
-      location: "The Grand Ballroom, Dallas",
+      date: "November , 2026",
+      title: "Winter Charity Gala",
+      location: "Details coming soon",
       description: "An evening of celebration and fundraising to support our upcoming summer outreach programs.",
       type: "Fundraiser"
     },
     {
-      date: "June 10, 2026",
-      title: "Youth Leadership Summit",
-      location: "Virtual Event",
-      description: "Empowering the next generation of change-makers with practical tools for local advocacy.",
-      type: "Workshop"
+      date: "August 15, 2026",
+      title: "Prayer Gathering 3",
+      location: "Dallas Texas",
+      description: "A powerful session of intercession and spiritual breakthrough.",
+      type: "Prayer Gathering"
     }
   ];
 
