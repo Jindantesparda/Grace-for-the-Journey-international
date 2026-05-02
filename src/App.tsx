@@ -128,7 +128,7 @@ const Hero = () => {
               <img
                 src="/images/logo.png"
                 alt="GFTJI Logo"
-                className="h-25 w-25 rounded-full border-2 border-brand-gold bg-white p-1 object-contain"
+                className="h-28 w-28 rounded-full border-2 border-brand-gold bg-transparent object-contain"
               />
               <p className="text-white text-lg md:text-xl font-semibold uppercase tracking-[0.18em] text-center">
                 Grace For The Journey International
