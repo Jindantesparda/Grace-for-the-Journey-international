@@ -28,21 +28,23 @@
 
 .liquid-glass {
   @apply relative overflow-hidden;
-  background: rgba(255, 255, 255, 0.18);
-  backdrop-filter: blur(26px) saturate(180%);
-  -webkit-backdrop-filter: blur(26px) saturate(180%);
-  border: 1px solid rgba(255, 255, 255, 0.45);
-  box-shadow: 0 30px 60px rgba(20, 30, 40, 0.12), inset 0 0 0 1px rgba(255, 255, 255, 0.08);
+  background: linear-gradient(135deg, rgba(255,255,255,0.24), rgba(255,255,255,0.12));
+  backdrop-filter: blur(30px) saturate(220%);
+  -webkit-backdrop-filter: blur(30px) saturate(220%);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.16), inset 0 0 0 1px rgba(255, 255, 255, 0.18);
+  background-clip: border-box;
 }
 
 .liquid-glass::before {
   content: '';
   position: absolute;
   inset: 0;
-  background: radial-gradient(circle at 20% 20%, rgba(255,255,255,0.7), transparent 18%),
-              radial-gradient(circle at 85% 10%, rgba(255,255,255,0.25), transparent 18%),
-              radial-gradient(circle at 50% 85%, rgba(255,255,255,0.12), transparent 25%);
-  opacity: 0.85;
+  background: radial-gradient(circle at 15% 20%, rgba(255,255,255,0.85), transparent 15%),
+              radial-gradient(circle at 85% 5%, rgba(255,255,255,0.28), transparent 16%),
+              radial-gradient(circle at 50% 85%, rgba(255,255,255,0.14), transparent 22%),
+              linear-gradient(45deg, rgba(255,255,255,0.1), transparent 45%, transparent 55%, rgba(255,255,255,0.08));
+  opacity: 0.9;
   pointer-events: none;
   mix-blend-mode: screen;
 }
@@ -51,9 +53,9 @@
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, rgba(255,255,255,0.18), rgba(255,255,255,0.02));
+  background: linear-gradient(165deg, rgba(255,255,255,0.2), rgba(255,255,255,0.03));
   pointer-events: none;
-  opacity: 0.75;
+  opacity: 0.85;
 }
 
 .pill-button {
