@@ -136,7 +136,7 @@ const Hero = () => {
             </div>
             <div className="mt-8">
               <p className="text-3xl md:text-4xl font-serif italic leading-relaxed text-white text-center">
-                “Never forget those that held you when when everyone else left.”
+                “Gracefully supporting special needs children and their families.”
               </p>
               <p className="mt-6 text-sm uppercase tracking-[0.28em] font-semibold text-brand-gold text-center">
                 Chaplain Tsitsi
