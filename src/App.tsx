@@ -23,6 +23,11 @@ import {
   MapPin,
   Quote
 } from 'lucide-react';
+import emailjs from '@emailjs/browser';
+
+// Initialize EmailJS with your public key
+// Replace 'YOUR_PUBLIC_KEY' with your actual EmailJS public key
+emailjs.init('YOUR_PUBLIC_KEY');
 
 const Logo = ({ size = "w-24 h-24" }) => (
   <div className={`relative ${size} flex items-center justify-center overflow-hidden rounded-full`}>
@@ -429,14 +434,26 @@ const Donate = () => {
             <h3 className="text-3xl font-serif mb-8 text-center text-brand-forest">Make a Significant Gift</h3>
             
             <div className="grid grid-cols-2 gap-4 mb-8">
-              {['$500', '$1,000', '$5,000', 'Other'].map((amount) => (
-                <button key={amount} className="py-4 border-2 border-brand-forest/20 rounded-2xl font-bold text-xl hover:bg-brand-forest hover:text-white hover:border-brand-forest transition-all">
-                  {amount}
+              {[
+                { label: '$500', amount: '500' },
+                { label: '$1,000', amount: '1000' },
+                { label: '$5,000', amount: '5000' },
+                { label: 'Other', amount: '' }
+              ].map((donation) => (
+                <button 
+                  key={donation.label} 
+                  onClick={() => window.open(`https://www.paypal.com/paypalme/TNyama${donation.amount ? '/' + donation.amount : ''}`, '_blank')}
+                  className="py-4 border-2 border-brand-forest/20 rounded-2xl font-bold text-xl hover:bg-brand-forest hover:text-white hover:border-brand-forest transition-all"
+                >
+                  {donation.label}
                 </button>
               ))}
             </div>
 
-            <button className="w-full py-6 bg-brand-forest text-white rounded-2xl font-bold text-2xl shadow-lg hover:scale-[1.02] transition-transform mb-8">
+            <button 
+              onClick={() => window.open('https://www.paypal.com/paypalme/TNyama', '_blank')}
+              className="w-full py-6 bg-brand-forest text-white rounded-2xl font-bold text-2xl shadow-lg hover:scale-[1.02] transition-transform mb-8"
+            >
               Donate Securely Online
             </button>
 
@@ -482,9 +499,20 @@ const Contact = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (email) {
-      setSubmitted(true);
-      setTimeout(() => setSubmitted(false), 5000);
-      setEmail('');
+      // Send email using EmailJS
+      // Replace 'YOUR_SERVICE_ID' and 'YOUR_TEMPLATE_ID' with your actual EmailJS service and template IDs
+      emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', {
+        to_email: email,
+        from_name: 'GFTJI Newsletter',
+        message: 'Thank you for subscribing to our newsletter. You will receive updates about our website and mission.',
+      }).then(() => {
+        setSubmitted(true);
+        setEmail('');
+        setTimeout(() => setSubmitted(false), 5000);
+      }).catch((error) => {
+        console.error('Email send failed:', error);
+        alert('Failed to subscribe. Please try again.');
+      });
     }
   };
 
