@@ -5,17 +5,17 @@ const recipientStories = [
   {
     name: "The Thompson Family",
     quote: "After years of feeling isolated, GFTJI provided the community connection we desperately needed. Their financial empowerment program helped us secure a stable future for our son.",
-    image: "/images/5.jpeg"
+    image: "/images/2.jpeg"
   },
   {
     name: "Maria & Leo",
     quote: "The spiritual encouragement I received here gave me the strength to advocate for Leo's education. We are no longer walking this journey alone.",
-    image: "/images/7.jpeg"
+    image: "/images/2.jpeg  "
   },
   {
     name: "The Chen Family",
     quote: "Practical resources from GFTJI made a world of difference in navigating Leo's medical needs. They are truly a blessing to Dallas families.",
-    image: "/images/3.jpeg"
+    image: "/images/2.jpeg"
   }
 ];
 
