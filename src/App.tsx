@@ -344,7 +344,7 @@ const Events = () => {
   const events = [
     {
       date: "May 2, 2026 - 10:00 AM",
-      title: "The Altar Call Prayer",
+      title: "The Altar Called Prayer",
       location: "Virtual Prayer Gathering",
       description: "A powerful morning of intercession and spiritual breakthrough. Join our global community online—scan the QR code on the event flyer to join the meeting.",
       type: "Virtual Event",
