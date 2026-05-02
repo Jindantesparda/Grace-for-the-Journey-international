@@ -29,7 +29,7 @@ import emailjs from '@emailjs/browser';
 // Replace 'YOUR_PUBLIC_KEY' with your actual EmailJS public key
 emailjs.init('YOUR_PUBLIC_KEY');
 
-const Logo = ({ size = "w-24 h-24" }) => (
+const Logo = ({ size = "w-16 h-16" }) => (
   <div className={`relative ${size} flex items-center justify-center overflow-hidden rounded-full`}>
     <img 
       src="/images/logo.png" 
@@ -43,20 +43,22 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 px-6 py-4">
-      <div className="max-w-7xl mx-auto flex justify-between items-center glass-card rounded-full px-8 py-3 backdrop-blur-xl bg-white/10 border border-white/20 shadow-lg">
+    <nav className="fixed top-0 left-0 right-0 z-50 px-2 py-2 sm:px-3">
+      <div className="max-w-7xl mx-auto flex items-center justify-between gap-3 liquid-glass rounded-full px-2 py-2.5 sm:px-4 md:px-6">
         <div className="flex items-center gap-3">
-          <Logo />
-          <span className="font-serif text-xl font-bold tracking-tight text-brand-forest">Graceftji.com</span>
+          <Logo size="w-14 h-14 sm:w-16 sm:h-16 md:w-20 md:h-20" />
+          <span className="hidden sm:inline font-serif text-base font-bold tracking-tight text-brand-forest md:text-xl bg-white/90 px-3 py-1 rounded-full shadow-sm">
+            Graceftji.com
+          </span>
         </div>
 
         {/* Desktop Nav */}
-        <div className="hidden md:flex items-center gap-8">
+        <div className="hidden md:flex items-center gap-4">
           {['About', 'Programs', 'Events', 'Impact', 'Contact'].map((item) => (
             <a 
               key={item} 
               href={`#${item.toLowerCase().replace(' ', '-')}`} 
-              className="text-sm font-medium hover:text-brand-forest transition-colors"
+              className="text-sm font-medium text-brand-forest bg-white/90 px-3 py-2 rounded-full shadow-sm hover:text-brand-forest transition-colors"
             >
               {item}
             </a>
@@ -67,7 +69,11 @@ const Navbar = () => {
         </div>
 
         {/* Mobile Toggle */}
-        <button className="md:hidden" onClick={() => setIsOpen(!isOpen)}>
+        <button
+          className="md:hidden inline-flex h-11 w-11 items-center justify-center rounded-full bg-white/15 text-brand-forest shadow-lg shadow-black/10"
+          onClick={() => setIsOpen(!isOpen)}
+          aria-label="Toggle navigation"
+        >
           {isOpen ? <X /> : <Menu />}
         </button>
       </div>
@@ -79,19 +85,19 @@ const Navbar = () => {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
-            className="md:hidden absolute top-20 left-6 right-6 glass-card rounded-3xl p-8 flex flex-col gap-6 backdrop-blur-xl bg-white/10 border border-white/20 shadow-lg"
+            className="md:hidden absolute top-[5.5rem] left-3 right-3 liquid-glass rounded-[2rem] p-5 flex flex-col gap-4 border border-white/20 shadow-2xl"
           >
             {['About', 'Programs', 'Events', 'Impact', 'Contact'].map((item) => (
               <a 
                 key={item} 
                 href={`#${item.toLowerCase().replace(' ', '-')}`} 
-                className="text-lg font-serif border-b border-brand-ink/10 pb-2"
+                className="text-lg font-serif text-brand-forest/90 hover:text-brand-forest transition-colors py-3 border-b border-brand-ink/10 bg-white/90 rounded-2xl px-4 shadow-sm"
                 onClick={() => setIsOpen(false)}
               >
                 {item}
               </a>
             ))}
-            <a href="#donate" className="pill-button bg-brand-olive text-white w-full text-center py-3" onClick={() => setIsOpen(false)}>
+            <a href="#donate" className="pill-button bg-brand-olive text-white w-full text-center py-4" onClick={() => setIsOpen(false)}>
               Donate Now
             </a>
           </motion.div>
@@ -117,6 +123,26 @@ const Hero = () => {
           <span className="inline-block px-4 py-1.5 rounded-full bg-brand-forest/10 text-brand-forest text-xs font-semibold uppercase tracking-widest mb-6 border border-brand-forest/20">
             Dallas, Texas • Special Needs Support
           </span>
+          <div className="mx-auto mb-8 max-w-3xl rounded-[2.5rem] border border-brand-gold/30 bg-brand-forest px-6 py-8 shadow-2xl shadow-brand-forest/20">
+            <div className="flex flex-col items-center gap-4">
+              <img
+                src="/images/logo.png"
+                alt="GFTJI Logo"
+                className="h-20 w-20 rounded-full border-2 border-brand-gold bg-white p-1"
+              />
+              <p className="text-white text-lg md:text-xl font-semibold uppercase tracking-[0.18em] text-center">
+                Grace For The Journey International
+              </p>
+            </div>
+            <div className="mt-8">
+              <p className="text-3xl md:text-4xl font-serif italic leading-relaxed text-white text-center">
+                “Never forget those that held you when when everyone else left.”
+              </p>
+              <p className="mt-6 text-sm uppercase tracking-[0.28em] font-semibold text-brand-gold text-center">
+                Chaplain Tsitsi
+              </p>
+            </div>
+          </div>
           <h1 className="text-5xl md:text-8xl font-serif leading-[1.1] mb-8 text-brand-forest">
             Strength in <span className="italic">Weakness</span> <br />
             Hope in the <span className="italic">Journey</span>.

@@ -54,7 +54,7 @@ export default function Footer() {
             <h4 className="text-gold font-bold uppercase tracking-widest text-xs mb-8">Contact Us</h4>
             <ul className="space-y-4">
               <li className="flex gap-3 items-center text-white/60 text-sm italic">
-                <Mail size={16} className="text-gold" /> info@graceftji.com
+                <Mail size={16} className="text-gold" /> tsitsi@graceftji.com
               </li>
               <li className="flex gap-3 items-center text-white/60 text-sm italic">
                 <Phone size={16} className="text-gold" /> +1 (214) 624-8888

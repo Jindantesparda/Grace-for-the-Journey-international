@@ -26,6 +26,36 @@
   @apply bg-white/40 backdrop-blur-md border border-white/20 shadow-sm;
 }
 
+.liquid-glass {
+  @apply relative overflow-hidden;
+  background: rgba(255, 255, 255, 0.18);
+  backdrop-filter: blur(26px) saturate(180%);
+  -webkit-backdrop-filter: blur(26px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  box-shadow: 0 30px 60px rgba(20, 30, 40, 0.12), inset 0 0 0 1px rgba(255, 255, 255, 0.08);
+}
+
+.liquid-glass::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 20% 20%, rgba(255,255,255,0.7), transparent 18%),
+              radial-gradient(circle at 85% 10%, rgba(255,255,255,0.25), transparent 18%),
+              radial-gradient(circle at 50% 85%, rgba(255,255,255,0.12), transparent 25%);
+  opacity: 0.85;
+  pointer-events: none;
+  mix-blend-mode: screen;
+}
+
+.liquid-glass::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(255,255,255,0.18), rgba(255,255,255,0.02));
+  pointer-events: none;
+  opacity: 0.75;
+}
+
 .pill-button {
   @apply px-6 py-2.5 rounded-full transition-all duration-300 font-medium;
 }
