@@ -16,9 +16,10 @@ import {
   ShieldCheck,
   Zap,
   Calendar,
-  HandHeart,
+  ShoppingCart,
+  Gift,
+  Layers,
   BookOpen,
-  Award,
   Phone,
   MapPin,
   Quote
@@ -416,117 +417,209 @@ const Events = () => {
 const Donate = () => {
   const [customAmount, setCustomAmount] = useState('');
 
+  const needs = [
+    { icon: ShoppingCart, title: 'Food', description: 'Nutritious food for families in need.' },
+    { icon: Gift, title: 'Gifts', description: 'Thoughtful holiday gifts for children.' },
+    { icon: Layers, title: 'Essentials', description: 'Everyday supplies and personal care items.' },
+    { icon: Users, title: 'Family Support', description: 'Practical help and encouragement for families.' },
+  ];
+
   return (
-    <section id="donate" className="py-24 px-6 bg-brand-forest text-white">
-      <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          <div>
-            <h2 className="text-4xl md:text-7xl font-serif mb-8 leading-tight">
-              Your Legacy of <span className="text-brand-gold italic">Grace</span>.
-            </h2>
-            <p className="text-xl text-white/70 mb-10 leading-relaxed">
-              For those who have been blessed with much, GFTJI offers a meaningful way to ensure your resources continue to empower families in Dallas and beyond.
-            </p>
-            
-            <div className="space-y-6 mb-12">
-              <div className="flex items-center gap-4 p-6 bg-white/5 rounded-2xl border border-white/10">
-                <Award className="text-brand-gold" size={32} />
-                <div>
-                  <h4 className="text-xl font-bold text-brand-gold">Tax-Deductible Giving</h4>
-                  <p className="text-brand-gold">Maximize your impact while optimizing your estate planning.</p>
-                </div>
+    <section id="donate" className="bg-brand-warm text-brand-ink scroll-mt-24">
+      {/* Split Hero */}
+      <div className="grid grid-cols-1 lg:grid-cols-2">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7 }}
+          className="flex flex-col justify-center bg-[#F7F3EA] px-6 py-16 sm:px-10 md:py-20 lg:px-16 lg:py-24 xl:px-24"
+        >
+          <span className="text-xs font-bold uppercase tracking-[0.28em] text-brand-forest sm:text-sm">
+            Holiday Giving Drive
+          </span>
+          <div className="mb-8 mt-4 h-0.5 w-16 bg-brand-forest" />
+          <h2 className="mb-8 font-serif text-5xl leading-[1.02] text-brand-forest sm:text-6xl xl:text-7xl">
+            Share Hope
+            <br />
+            <span className="italic">This Season</span>
+          </h2>
+          <p className="mb-10 max-w-xl text-lg leading-relaxed text-brand-ink/70 md:text-xl">
+            Give with compassion. This Thanksgiving and Christmas, help families raising children with special needs with food, essential supplies, and holiday gifts.
+          </p>
+          <div className="flex flex-col gap-4 sm:flex-row">
+            <a
+              href="#giving-options"
+              className="pill-button inline-flex items-center justify-center gap-2 bg-brand-forest px-8 py-4 text-base font-bold text-white shadow-lg shadow-brand-forest/15 transition-colors hover:bg-brand-forest/90"
+            >
+              <Heart size={18} />
+              Give This Season
+            </a>
+            <a
+              href="#donation-needs"
+              className="pill-button inline-flex items-center justify-center border-2 border-brand-forest px-8 py-4 text-base font-bold text-brand-forest transition-colors hover:bg-brand-forest hover:text-white"
+            >
+              Learn More
+            </a>
+          </div>
+        </motion.div>
+
+        <div className="relative min-h-[420px] lg:min-h-[660px]">
+          <img
+            src="/donate-hero.webp"
+            srcSet="/donate-hero-800.webp 800w, /donate-hero.webp 1096w"
+            sizes="(min-width: 1024px) 50vw, 100vw"
+            width={1096}
+            height={621}
+            alt="Children smiling together in front of a Christmas tree"
+            loading="lazy"
+            decoding="async"
+            className="absolute inset-0 h-full w-full object-cover object-center"
+          />
+        </div>
+      </div>
+
+      {/* What Your Gift Provides */}
+      <div id="donation-needs" className="scroll-mt-24 border-y border-brand-forest/10 bg-[#F1EDE1]">
+        <div className="mx-auto grid max-w-7xl grid-cols-1 gap-px bg-brand-forest/10 sm:grid-cols-2 lg:grid-cols-4">
+          {needs.map(({ icon: Icon, title, description }, index) => (
+            <motion.div
+              key={title}
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: index * 0.08, duration: 0.5 }}
+              className="flex items-start gap-4 bg-[#F1EDE1] px-6 py-8 lg:px-8 lg:py-10"
+            >
+              <Icon className="shrink-0 text-brand-forest" size={38} strokeWidth={1.5} />
+              <div>
+                <h3 className="mb-1 font-serif text-2xl font-bold text-brand-forest">{title}</h3>
+                <p className="text-sm leading-relaxed text-brand-ink/65">{description}</p>
               </div>
-              <div className="flex items-center gap-4 p-6 bg-white/5 rounded-2xl border border-white/10">
-                <HandHeart className="text-brand-gold" size={32} />
-                <div>
-                  <h4 className="text-xl font-bold text-brand-gold">Endowment Opportunities</h4>
-                  <p className="text-brand-gold">Create a permanent fund that supports a specific cause in your name.</p>
-                </div>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+
+      {/* Giving Options */}
+      <div id="giving-options" className="scroll-mt-24 px-6 py-20 md:py-28">
+        <div className="mx-auto max-w-6xl">
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="grid grid-cols-1 overflow-hidden rounded-[2.5rem] border border-brand-forest/10 shadow-2xl shadow-brand-forest/10 lg:grid-cols-[0.9fr_1.1fr]"
+          >
+            <div className="flex flex-col bg-brand-forest p-8 text-white md:p-12">
+              <span className="text-xs font-bold uppercase tracking-[0.28em] text-brand-gold">
+                Make Your Gift
+              </span>
+              <h3 className="mb-6 mt-5 font-serif text-4xl leading-tight text-white md:text-5xl">
+                Every gift
+                <br />
+                <span className="italic text-brand-gold">brings hope.</span>
+              </h3>
+              <p className="mb-8 leading-relaxed text-white/70">
+                Your generosity provides practical support and encouragement to families raising children with special needs.
+              </p>
+              <ul className="mb-10 space-y-4">
+                {[
+                  { icon: ShieldCheck, label: 'Tax-deductible giving' },
+                  { icon: Heart, label: 'Secure online donations' },
+                  { icon: Users, label: 'Direct support for local families' },
+                ].map(({ icon: Icon, label }) => (
+                  <li key={label} className="flex items-center gap-3 text-white/85">
+                    <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-white/10 text-brand-gold">
+                      <Icon size={18} />
+                    </span>
+                    {label}
+                  </li>
+                ))}
+              </ul>
+              <div className="mt-auto rounded-2xl border border-white/10 bg-white/5 p-5">
+                <p className="mb-2 font-serif text-xl text-brand-gold">Prefer to give by check?</p>
+                <p className="mb-3 text-sm text-white/60">Please make checks payable to:</p>
+                <p className="font-mono text-xs leading-relaxed text-white/80 sm:text-sm">
+                  Grace for the Journey International<br />
+                  Attn: Development Office<br />
+                  123 Grace Way, Suite 500<br />
+                  Dallas, Texas 75201
+                </p>
               </div>
             </div>
-          </div>
 
-          <div className="bg-white text-brand-ink p-10 md:p-16 rounded-[3rem] shadow-2xl">
-            <h3 className="text-3xl font-serif mb-8 text-center text-brand-forest">Make a Significant Gift</h3>
-            
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
-              {[
-                { label: '$500', amount: '500' },
-                { label: '$1,000', amount: '1000' },
-                { label: '$5,000', amount: '5000' }
-              ].map((donation) => (
-                <motion.button 
-                  key={donation.label} 
-                  onClick={() => window.open(`https://www.paypal.com/paypalme/TNyama/${donation.amount}`, '_blank')}
+            <div className="bg-white p-8 md:p-12">
+              <h3 className="mb-2 font-serif text-3xl text-brand-forest">Choose an Amount</h3>
+              <p className="mb-8 text-sm text-brand-ink/50">
+                Your gift goes directly toward helping families.
+              </p>
+
+              <div className="mb-6 grid grid-cols-2 gap-3">
+                {[50, 100, 250, 500].map((amount) => (
+                  <motion.button
+                    key={amount}
+                    onClick={() => window.open(`https://www.paypal.com/paypalme/TNyama/${amount}`, '_blank')}
+                    whileTap={{ scale: 0.96 }}
+                    className="rounded-2xl border-2 border-brand-forest/15 py-4 text-xl font-bold text-brand-forest transition-all hover:border-brand-forest hover:bg-brand-forest hover:text-white"
+                  >
+                    ${amount.toLocaleString()}
+                  </motion.button>
+                ))}
+              </div>
+
+              <div className="mb-8 flex flex-col gap-3 sm:flex-row">
+                <input
+                  type="number"
+                  placeholder="Custom amount"
+                  value={customAmount}
+                  onChange={(e) => setCustomAmount(e.target.value)}
+                  className="min-w-0 flex-1 rounded-2xl border-2 border-brand-forest/15 px-4 py-4 font-bold text-lg focus:border-brand-forest focus:outline-none"
+                  min="1"
+                />
+                <motion.button
+                  onClick={() => {
+                    if (customAmount && parseFloat(customAmount) > 0) {
+                      window.open(`https://www.paypal.com/paypalme/TNyama/${customAmount}`, '_blank');
+                    }
+                  }}
                   whileTap={{ scale: 0.95 }}
-                  className="py-4 border-2 border-brand-forest/20 rounded-2xl font-bold text-xl hover:bg-brand-forest hover:text-white hover:border-brand-forest transition-all"
+                  className="rounded-2xl border-2 border-brand-forest/15 px-6 py-4 font-bold text-lg text-brand-forest transition-all hover:border-brand-forest hover:bg-brand-forest hover:text-white"
                 >
-                  {donation.label}
+                  Give
                 </motion.button>
-              ))}
-            </div>
-
-            <div className="flex gap-4 mb-8">
-              <input 
-                type="number" 
-                placeholder="Enter custom amount" 
-                value={customAmount}
-                onChange={(e) => setCustomAmount(e.target.value)}
-                className="flex-1 min-w-0 py-4 px-4 border-2 border-brand-forest/20 rounded-2xl font-bold text-xl focus:outline-none focus:border-brand-forest"
-                min="1"
-              />
-              <motion.button 
-                onClick={() => {
-                  if (customAmount && parseFloat(customAmount) > 0) {
-                    window.open(`https://www.paypal.com/paypalme/TNyama/${customAmount}`, '_blank');
-                  }
-                }}
-                whileTap={{ scale: 0.95 }}
-                className="py-4 px-6 border-2 border-brand-forest/20 rounded-2xl font-bold text-xl hover:bg-brand-forest hover:text-white hover:border-brand-forest transition-all"
-              >
-                Donate
-              </motion.button>
-            </div>
-
-            <motion.button 
-              onClick={() => window.open('https://www.paypal.com/paypalme/TNyama', '_blank')}
-              whileTap={{ scale: 0.98 }}
-              className="w-full py-6 bg-brand-forest text-white rounded-2xl font-bold text-2xl shadow-lg hover:scale-[1.02] transition-transform"
-            >
-              Donate Securely Online
-            </motion.button>
-
-            <div className="flex items-center gap-4 my-6">
-              <div className="flex-1 h-px bg-brand-ink/10" />
-              <span className="text-xs uppercase tracking-widest font-bold text-brand-ink/40">or</span>
-              <div className="flex-1 h-px bg-brand-ink/10" />
-            </div>
-
-            <motion.a
-              href="https://givebutter.com/support-care-for-families-with-special-needs-ny7m22"
-              target="_blank"
-              rel="noopener noreferrer"
-              whileTap={{ scale: 0.98 }}
-              className="w-full py-5 border-2 border-brand-forest text-brand-forest rounded-2xl font-bold text-xl hover:bg-brand-forest hover:text-white transition-colors flex items-center justify-center gap-3"
-            >
-              <Heart size={22} />
-              Donate via Givebutter
-            </motion.a>
-            <p className="text-center text-sm text-brand-ink/50 mt-3 mb-8">
-              Support care for families with special needs.
-            </p>
-
-            <div className="pt-8 border-t border-brand-ink/10 text-center">
-              <p className="font-bold text-lg mb-2">Prefer to Give by Check?</p>
-              <p className="text-brand-ink/60 mb-4">Please make checks payable to:</p>
-              <div className="bg-brand-forest/5 p-4 rounded-xl font-mono text-sm border border-brand-forest/10">
-                Grace for the Journey International<br />
-                Attn: Development Office<br />
-                123 Grace Way, Suite 500<br />
-                Dallas, Texas 75201
               </div>
+
+              <motion.button
+                onClick={() => window.open('https://www.paypal.com/paypalme/TNyama', '_blank')}
+                whileTap={{ scale: 0.98 }}
+                className="flex w-full items-center justify-center gap-2 rounded-2xl bg-brand-forest py-5 text-lg font-bold text-white shadow-lg transition-colors hover:bg-brand-forest/90"
+              >
+                <ShieldCheck size={20} />
+                Donate with PayPal
+              </motion.button>
+
+              <div className="my-6 flex items-center gap-4">
+                <div className="h-px flex-1 bg-brand-ink/10" />
+                <span className="text-xs font-bold uppercase tracking-widest text-brand-ink/40">or</span>
+                <div className="h-px flex-1 bg-brand-ink/10" />
+              </div>
+
+              <motion.a
+                href="https://givebutter.com/support-care-for-families-with-special-needs-ny7m22"
+                target="_blank"
+                rel="noopener noreferrer"
+                whileTap={{ scale: 0.98 }}
+                className="flex w-full items-center justify-center gap-3 rounded-2xl border-2 border-brand-forest py-4 text-lg font-bold text-brand-forest transition-colors hover:bg-brand-forest hover:text-white"
+              >
+                <Heart size={20} />
+                Donate via Givebutter
+              </motion.a>
+              <p className="mt-3 text-center text-xs text-brand-ink/45">
+                Support care for families with special needs.
+              </p>
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>
