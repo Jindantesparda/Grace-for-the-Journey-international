@@ -1,0 +1,22 @@
+name: Local Config
+version: 1.0.0
+schema: v1
+models:
+  - name: "Gemma 3 (Vision)"
+    provider: ollama
+    model: gemma3:4b
+    capabilities: [tool_use, image_input]
+
+  - name: "Llama 3.1 (Logic)"
+    provider: ollama
+    model: llama3.1:8b
+
+mcpServers:
+  - name: "blender"
+    command: "npx"
+    args:
+      - "-y"
+      - "@p_m_m/blender-mcp"
+    env:
+      BLENDER_HOST: "localhost"
+      BLENDER_PORT: "9876"

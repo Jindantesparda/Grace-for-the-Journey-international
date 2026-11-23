@@ -503,10 +503,30 @@ const Donate = () => {
             <motion.button 
               onClick={() => window.open('https://www.paypal.com/paypalme/TNyama', '_blank')}
               whileTap={{ scale: 0.98 }}
-              className="w-full py-6 bg-brand-forest text-white rounded-2xl font-bold text-2xl shadow-lg hover:scale-[1.02] transition-transform mb-8"
+              className="w-full py-6 bg-brand-forest text-white rounded-2xl font-bold text-2xl shadow-lg hover:scale-[1.02] transition-transform"
             >
               Donate Securely Online
             </motion.button>
+
+            <div className="flex items-center gap-4 my-6">
+              <div className="flex-1 h-px bg-brand-ink/10" />
+              <span className="text-xs uppercase tracking-widest font-bold text-brand-ink/40">or</span>
+              <div className="flex-1 h-px bg-brand-ink/10" />
+            </div>
+
+            <motion.a
+              href="https://givebutter.com/support-care-for-families-with-special-needs-ny7m22"
+              target="_blank"
+              rel="noopener noreferrer"
+              whileTap={{ scale: 0.98 }}
+              className="w-full py-5 border-2 border-brand-forest text-brand-forest rounded-2xl font-bold text-xl hover:bg-brand-forest hover:text-white transition-colors flex items-center justify-center gap-3"
+            >
+              <Heart size={22} />
+              Donate via Givebutter
+            </motion.a>
+            <p className="text-center text-sm text-brand-ink/50 mt-3 mb-8">
+              Support care for families with special needs.
+            </p>
 
             <div className="pt-8 border-t border-brand-ink/10 text-center">
               <p className="font-bold text-lg mb-2">Prefer to Give by Check?</p>
