@@ -109,55 +109,38 @@ const Navbar = () => {
 
 const Hero = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center px-6 pt-20 overflow-hidden">
-      {/* Background Elements */}
-      <div className="absolute top-1/4 -left-20 w-96 h-96 bg-brand-forest/5 rounded-full blur-3xl" />
-      <div className="absolute bottom-1/4 -right-20 w-96 h-96 bg-brand-forest/10 rounded-full blur-3xl" />
+    <section className="relative min-h-screen flex items-center overflow-hidden px-6 pt-32 pb-20">
+      {/* Background Image */}
+      <img
+        src="/new-page.png"
+        alt="A smiling family and children, including a child in a wheelchair, gathered outdoors"
+        className="absolute inset-0 h-full w-full object-cover object-center"
+      />
+      <div className="absolute inset-0 bg-gradient-to-r from-brand-forest/95 via-brand-forest/80 to-brand-forest/50 md:via-brand-forest/65 md:to-brand-forest/15" />
 
-      <div className="max-w-5xl mx-auto text-center relative z-10">
+      <div className="relative z-10 max-w-7xl mx-auto w-full">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
+          className="max-w-3xl"
         >
-          <span className="inline-block px-4 py-1.5 rounded-full bg-brand-forest/10 text-brand-forest text-xs font-semibold uppercase tracking-widest mb-6 border border-brand-forest/20">
-            Dallas, Texas • Special Needs Support
-          </span>
-          <div className="mx-auto mb-8 max-w-3xl rounded-[2.5rem] border border-brand-gold/30 bg-brand-forest px-6 py-8 shadow-2xl shadow-brand-forest/20">
-            <div className="flex flex-col items-center gap-4">
-              <img
-                src="/images/logo.png"
-                alt="GFTJI Logo"
-                className="h-28 w-28 rounded-full border-2 border-brand-gold bg-transparent object-contain"
-              />
-              <p className="text-white text-lg md:text-xl font-semibold uppercase tracking-[0.18em] text-center">
-                Grace For The Journey International
-              </p>
-            </div>
-            <div className="mt-8">
-              <p className="text-3xl md:text-4xl font-serif italic leading-relaxed text-white text-center">
-                “Gracefully supporting special needs children and their families.”
-              </p>
-              <p className="mt-6 text-sm uppercase tracking-[0.28em] font-semibold text-brand-gold text-center">
-                Chaplain Tsitsi
-              </p>
-            </div>
-          </div>
-          <h1 className="text-5xl md:text-8xl font-serif leading-[1.1] mb-8 text-brand-forest">
-            Strength in <span className="italic">Weakness</span> <br />
-            Hope in the <span className="italic">Journey</span>.
+          <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-serif leading-[1.08] mb-8 text-white drop-shadow-lg">
+            Every Family deserves support.
+            <br />
+            <span className="text-brand-gold italic">Every child</span> deserves hope.
           </h1>
-          <p className="text-lg md:text-xl text-brand-ink/70 max-w-3xl mx-auto mb-10 leading-relaxed">
-            "My grace is sufficient for you, for my power is made perfect in weakness." — 2 Corinthians 12:9
+          <p className="text-lg md:text-2xl text-white/80 max-w-2xl mb-10 leading-relaxed">
+            Supporting families raising children through practical assistance and community.
           </p>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <button className="pill-button bg-brand-forest text-white px-10 py-4 text-lg hover:scale-105 active:scale-95 shadow-lg shadow-brand-forest/20">
-              Get Support
-            </button>
-            <button className="pill-button border-2 border-brand-gold text-brand-forest px-10 py-4 text-lg hover:bg-brand-gold/10 font-bold">
-              Our Mission
-            </button>
-          </div>
+          <motion.a
+            href="#donate"
+            whileTap={{ scale: 0.95 }}
+            className="pill-button inline-flex items-center gap-3 bg-brand-gold text-brand-forest px-10 py-4 text-lg font-bold shadow-lg shadow-black/20 hover:scale-105"
+          >
+            <Heart size={22} />
+            Donate Now
+          </motion.a>
         </motion.div>
       </div>
     </section>
@@ -484,7 +467,7 @@ const Donate = () => {
                 placeholder="Enter custom amount" 
                 value={customAmount}
                 onChange={(e) => setCustomAmount(e.target.value)}
-                className="flex-1 py-4 px-4 border-2 border-brand-forest/20 rounded-2xl font-bold text-xl focus:outline-none focus:border-brand-forest"
+                className="flex-1 min-w-0 py-4 px-4 border-2 border-brand-forest/20 rounded-2xl font-bold text-xl focus:outline-none focus:border-brand-forest"
                 min="1"
               />
               <motion.button 
