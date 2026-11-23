@@ -112,8 +112,13 @@ const Hero = () => {
     <section className="relative min-h-screen flex items-center overflow-hidden px-6 pt-32 pb-20">
       {/* Background Image */}
       <img
-        src="/new-page.png"
+        src="/new-page.webp"
+        srcSet="/new-page-800.webp 800w, /new-page-1200.webp 1200w, /new-page.webp 1670w"
+        sizes="100vw"
+        width={1670}
+        height={941}
         alt="A smiling family and children, including a child in a wheelchair, gathered outdoors"
+        fetchPriority="high"
         className="absolute inset-0 h-full w-full object-cover object-center"
       />
       <div className="absolute inset-0 bg-gradient-to-r from-brand-forest/95 via-brand-forest/80 to-brand-forest/50 md:via-brand-forest/65 md:to-brand-forest/15" />
